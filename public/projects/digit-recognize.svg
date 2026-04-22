@@ -1,0 +1,26 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="900" rx="48" fill="#0A1320"/>
+  <circle cx="206" cy="176" r="180" fill="url(#paint0_radial)"/>
+  <circle cx="958" cy="726" r="220" fill="url(#paint1_radial)"/>
+  <rect x="132" y="110" width="936" height="680" rx="44" fill="#101D2E" stroke="#FFFFFF" stroke-opacity="0.14"/>
+  <path d="M322 260L470 260V628C470 672.183 434.183 708 390 708C345.817 708 310 672.183 310 628V610" stroke="#76E4F7" stroke-width="32" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M606 252C715.241 252 804 340.759 804 450C804 559.241 715.241 648 606 648C496.759 648 408 559.241 408 450" stroke="#FF9F5A" stroke-width="34" stroke-linecap="round"/>
+  <path d="M890 258L964 258V708" stroke="#9BE2B0" stroke-width="32" stroke-linecap="round"/>
+  <path d="M835 360C835 302.562 881.562 256 939 256C996.438 256 1043 302.562 1043 360C1043 417.438 996.438 464 939 464H885" stroke="#9BE2B0" stroke-width="32" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="230" y="680" width="224" height="62" rx="22" fill="#07111F" stroke="#76E4F7" stroke-opacity="0.45"/>
+  <text x="267" y="721" fill="#F6F1E8" font-family="Arial, sans-serif" font-size="34" letter-spacing="4">OCR FLOW</text>
+  <rect x="502" y="680" width="236" height="62" rx="22" fill="#07111F" stroke="#FF9F5A" stroke-opacity="0.45"/>
+  <text x="534" y="721" fill="#F6F1E8" font-family="Arial, sans-serif" font-size="34" letter-spacing="4">CLASSIFIER</text>
+  <rect x="788" y="680" width="196" height="62" rx="22" fill="#07111F" stroke="#9BE2B0" stroke-opacity="0.45"/>
+  <text x="830" y="721" fill="#F6F1E8" font-family="Arial, sans-serif" font-size="34" letter-spacing="4">ML</text>
+  <defs>
+    <radialGradient id="paint0_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(206 176) rotate(90) scale(180)">
+      <stop stop-color="#76E4F7" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#76E4F7" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="paint1_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(958 726) rotate(90) scale(220)">
+      <stop stop-color="#FF9F5A" stop-opacity="0.42"/>
+      <stop offset="1" stop-color="#FF9F5A" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+</svg>

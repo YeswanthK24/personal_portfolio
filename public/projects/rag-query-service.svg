@@ -1,0 +1,40 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="900" rx="48" fill="#09111D"/>
+  <circle cx="232" cy="186" r="190" fill="url(#paint0_radial)"/>
+  <circle cx="962" cy="694" r="246" fill="url(#paint1_radial)"/>
+  <rect x="132" y="108" width="936" height="684" rx="40" fill="#0F1B2D" stroke="#FFFFFF" stroke-opacity="0.14"/>
+  <rect x="208" y="174" width="364" height="512" rx="30" fill="#111F34" stroke="#76E4F7" stroke-opacity="0.35" stroke-width="4"/>
+  <rect x="628" y="174" width="364" height="512" rx="30" fill="#10192B" stroke="#FF9F5A" stroke-opacity="0.35" stroke-width="4"/>
+  <rect x="250" y="238" width="280" height="74" rx="22" fill="#09111B" stroke="#76E4F7" stroke-opacity="0.45"/>
+  <text x="287" y="286" fill="#F6F1E8" font-family="Arial, sans-serif" font-size="34" letter-spacing="4">UPLOAD PDF</text>
+  <rect x="250" y="346" width="280" height="54" rx="18" fill="#0B1625"/>
+  <rect x="250" y="426" width="230" height="54" rx="18" fill="#0B1625"/>
+  <rect x="250" y="506" width="192" height="54" rx="18" fill="#0B1625"/>
+  <rect x="670" y="238" width="210" height="60" rx="22" fill="#09111B" stroke="#FF9F5A" stroke-opacity="0.45"/>
+  <text x="707" y="278" fill="#F6F1E8" font-family="Arial, sans-serif" font-size="28" letter-spacing="4">ASK</text>
+  <rect x="670" y="332" width="258" height="74" rx="24" fill="#111F34"/>
+  <rect x="704" y="354" width="190" height="14" rx="7" fill="#76E4F7" fill-opacity="0.8"/>
+  <rect x="704" y="378" width="142" height="14" rx="7" fill="#76E4F7" fill-opacity="0.45"/>
+  <rect x="670" y="446" width="290" height="106" rx="24" fill="#111F34"/>
+  <rect x="704" y="472" width="226" height="14" rx="7" fill="#9BE2B0" fill-opacity="0.75"/>
+  <rect x="704" y="496" width="202" height="14" rx="7" fill="#9BE2B0" fill-opacity="0.48"/>
+  <rect x="704" y="520" width="154" height="14" rx="7" fill="#9BE2B0" fill-opacity="0.34"/>
+  <path d="M572 430H626" stroke="#F6F1E8" stroke-width="10" stroke-linecap="round"/>
+  <path d="M600 404V456" stroke="#F6F1E8" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="600" cy="430" r="92" stroke="#76E4F7" stroke-opacity="0.32" stroke-width="10"/>
+  <circle cx="600" cy="430" r="128" stroke="#FF9F5A" stroke-opacity="0.2" stroke-width="6"/>
+  <rect x="296" y="724" width="260" height="64" rx="22" fill="#07111F" stroke="#76E4F7" stroke-opacity="0.45"/>
+  <text x="338" y="766" fill="#F6F1E8" font-family="Arial, sans-serif" font-size="30" letter-spacing="4">SPRING AI</text>
+  <rect x="624" y="724" width="292" height="64" rx="22" fill="#07111F" stroke="#FF9F5A" stroke-opacity="0.45"/>
+  <text x="662" y="766" fill="#F6F1E8" font-family="Arial, sans-serif" font-size="30" letter-spacing="4">PGVECTOR RAG</text>
+  <defs>
+    <radialGradient id="paint0_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(232 186) rotate(90) scale(190)">
+      <stop stop-color="#76E4F7" stop-opacity="0.52"/>
+      <stop offset="1" stop-color="#76E4F7" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="paint1_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(962 694) rotate(90) scale(246)">
+      <stop stop-color="#FF9F5A" stop-opacity="0.38"/>
+      <stop offset="1" stop-color="#FF9F5A" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+</svg>
