@@ -7,7 +7,7 @@ An interactive **3D portfolio website** built using modern frontend technologies
 ---
 
 ## 🚀 Live Demo
-🔗 https://your-live-link.com
+🔗 [https://your-live-link.com](https://personal-portfolio-psi-seven-29.vercel.app/)
 
 ---
 
