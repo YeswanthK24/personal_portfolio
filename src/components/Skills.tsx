@@ -26,7 +26,7 @@ export default function Skills() {
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.55, delay: idx * 0.08 }}
               whileHover={{ y: -8, rotateX: 3, rotateY: -3 }}
-              className="glass-panel depth-panel rounded-[1.75rem] p-7"
+              className="glass-panel depth-panel rounded-[1.5rem] p-5 sm:rounded-[1.75rem] sm:p-7"
             >
               <div className="depth-layer">
                 <p className="section-kicker">{group.title}</p>

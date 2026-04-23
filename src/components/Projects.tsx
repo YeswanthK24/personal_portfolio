@@ -27,10 +27,10 @@ export default function Projects() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.7, ease: "easeOut" }}
             whileHover={{ y: -8, rotateX: 2, rotateY: -2 }}
-            className="glass-panel depth-panel rounded-[2rem] p-0"
+            className="glass-panel depth-panel rounded-[1.5rem] p-0 sm:rounded-[2rem]"
           >
             <div className="grid h-full gap-0 lg:grid-cols-[0.92fr_1.08fr]">
-              <div className="relative min-h-[19rem] overflow-hidden lg:min-h-full">
+              <div className="relative min-h-[14rem] overflow-hidden sm:min-h-[19rem] lg:min-h-full">
                 <Image
                   src={featuredProject.image}
                   alt={featuredProject.title}
@@ -45,10 +45,10 @@ export default function Projects() {
                 </div>
               </div>
 
-              <div className="p-8 md:p-10">
+              <div className="p-5 sm:p-8 md:p-10">
                 <div className="depth-layer">
                   <p className="section-kicker">{featuredProject.period}</p>
-                  <h3 className="display-font mt-4 text-3xl font-semibold text-white md:text-4xl">
+                  <h3 className="display-font mt-4 text-2xl font-semibold text-white sm:text-3xl md:text-4xl">
                     {featuredProject.title}
                   </h3>
                   <p className="mt-5 text-base leading-7 text-white/82">{featuredProject.summary}</p>
@@ -89,7 +89,7 @@ export default function Projects() {
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.55, delay: index * 0.08 }}
               whileHover={{ y: -10, rotateX: 3, rotateY: -3 }}
-              className="glass-panel depth-panel rounded-[1.75rem] p-6"
+              className="glass-panel depth-panel rounded-[1.5rem] p-5 sm:rounded-[1.75rem] sm:p-6"
             >
               <div className="depth-layer">
                 <div className="relative h-44 overflow-hidden rounded-[1.35rem] border border-white/8 bg-black/20">

@@ -6,11 +6,11 @@ import { profile } from "@/data/portfolio";
 
 export default function Hero() {
   return (
-    <section className="section-shell overflow-hidden pt-8 md:pt-10" id="home">
+    <section className="section-shell overflow-hidden pb-20 pt-6 sm:pt-8 md:pt-10" id="home">
       <div className="section-orb section-orb--cyan -left-20 top-12 h-64 w-64" />
       <div className="section-orb section-orb--orange right-0 top-28 h-72 w-72" />
 
-      <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center xl:gap-14">
+      <div className="mx-auto grid max-w-7xl gap-8 md:gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center xl:gap-14">
         <motion.div
           initial={{ opacity: 0, y: 28 }}
           animate={{ opacity: 1, y: 0 }}
@@ -20,7 +20,7 @@ export default function Hero() {
           <span className="status-pill">{profile.availability}</span>
           <p className="mt-7 text-sm uppercase tracking-[0.16em] text-white/55">Hello, I&apos;m</p>
 
-          <h1 className="display-font mt-4 max-w-4xl text-4xl font-semibold leading-[0.96] tracking-tight text-white sm:text-5xl md:text-7xl">
+          <h1 className="display-font mt-4 max-w-4xl text-3xl font-semibold leading-[0.96] tracking-tight text-white sm:text-4xl md:text-5xl lg:text-7xl">
             {profile.name}
           </h1>
 
@@ -81,7 +81,7 @@ export default function Hero() {
           initial={{ opacity: 0, x: 24 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.12, ease: "easeOut" }}
-          className="relative lg:pl-4"
+          className="relative order-first lg:order-none lg:pl-4"
         >
           <HeroScene />
         </motion.div>

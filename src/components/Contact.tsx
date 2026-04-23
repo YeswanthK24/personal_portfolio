@@ -51,14 +51,14 @@ export default function Contact() {
   };
 
   return (
-    <section className="section-shell pb-32" id="contact">
+    <section className="section-shell pb-28 sm:pb-32" id="contact">
       <div className="section-orb section-orb--orange left-10 top-10 h-60 w-60" />
       <div className="section-orb section-orb--cyan right-10 bottom-10 h-56 w-56" />
 
       <div className="mx-auto max-w-7xl">
         <SectionHeader eyebrow="Contact" title="Contact." description="A simple way to reach me." />
 
-        <div className="mt-12 grid grid-cols-1 gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start lg:gap-10">
+        <div className="mt-10 grid grid-cols-1 gap-6 sm:mt-12 sm:gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start lg:gap-10">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -66,7 +66,7 @@ export default function Contact() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="space-y-6"
           >
-            <div className="glass-panel rounded-[2rem] p-6 md:p-9">
+            <div className="glass-panel rounded-[1.5rem] p-5 sm:rounded-[2rem] sm:p-6 md:p-9">
               <p className="section-kicker">Direct Reach</p>
               <div className="mt-6 space-y-4">
                 <ContactLink
@@ -107,7 +107,7 @@ export default function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, delay: 0.15, ease: "easeOut" }}
-            className="glass-panel rounded-[2rem] p-6 md:p-10"
+            className="glass-panel rounded-[1.5rem] p-5 sm:rounded-[2rem] sm:p-6 md:p-10"
           >
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>

@@ -74,7 +74,7 @@ function FloatingTile({
 
 export default function HeroScene() {
   return (
-    <div className="relative h-[20rem] overflow-hidden rounded-[2rem] border border-white/10 bg-[radial-gradient(circle_at_top,rgba(118,228,247,0.18),transparent_30rem),linear-gradient(180deg,rgba(11,20,35,0.96),rgba(7,13,24,0.96))] sm:h-[24rem] md:h-[32rem]">
+    <div className="relative h-[16rem] overflow-hidden rounded-[1.5rem] border border-white/10 bg-[radial-gradient(circle_at_top,rgba(118,228,247,0.18),transparent_30rem),linear-gradient(180deg,rgba(11,20,35,0.96),rgba(7,13,24,0.96))] sm:h-[20rem] sm:rounded-[2rem] md:h-[24rem] lg:h-[32rem]">
       <div className="absolute inset-4 rounded-[1.6rem] orbit-border" />
       <Canvas camera={{ position: [0, 0, 7.5], fov: 42 }}>
         <ambientLight intensity={1.15} />

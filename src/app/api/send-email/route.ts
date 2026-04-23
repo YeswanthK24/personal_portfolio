@@ -1,6 +1,23 @@
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 import { profile } from "@/data/portfolio";
+import dns from "dns/promises";
+
+/**
+ * Verify that the email domain has valid MX (mail exchange) records,
+ * meaning the domain actually exists and can receive emails.
+ */
+async function isEmailDomainValid(email: string): Promise<boolean> {
+  try {
+    const domain = email.split("@")[1];
+    if (!domain) return false;
+
+    const mxRecords = await dns.resolveMx(domain);
+    return mxRecords.length > 0;
+  } catch {
+    return false;
+  }
+}
 
 export async function POST(req: Request) {
   try {
@@ -17,6 +34,15 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: "Please enter a valid email address." }, { status: 400 });
     }
 
+    // Verify the sender's email domain actually exists
+    const domainValid = await isEmailDomainValid(trimmedEmail);
+    if (!domainValid) {
+      return NextResponse.json(
+        { error: "This email domain does not exist. Please enter a valid email address." },
+        { status: 400 }
+      );
+    }
+
     if (process.env.EMAIL_USER && process.env.EMAIL_PASS) {
       const transporter = nodemailer.createTransport({
         service: "gmail",
@@ -31,22 +57,30 @@ export async function POST(req: Request) {
       const safeMessage = escapeHtml(trimmedMessage);
 
       const mailOptions = {
-        from: process.env.EMAIL_USER,
+        // Gmail forces authenticated email as "from", but we set the display
+        // name so you can immediately see who sent the message.
+        from: `${trimmedName} via Portfolio <${process.env.EMAIL_USER}>`,
         to: process.env.EMAIL_USER,
-        replyTo: trimmedEmail,
-        subject: `New Message from Portfolio: ${trimmedName}`,
+        replyTo: `${trimmedName} <${trimmedEmail}>`,
+        subject: `Portfolio Message from ${trimmedName} (${trimmedEmail})`,
         html: `
-          <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #eee; border-radius: 10px;">
-            <h2 style="color: #333; text-align: center;">New Portfolio Message</h2>
-            <div style="background-color: #f9f9f9; padding: 15px; border-radius: 5px; margin-bottom: 20px;">
-              <p><strong>Name:</strong> ${safeName}</p>
-              <p><strong>Email:</strong> ${safeEmail}</p>
+          <div style="font-family: 'Segoe UI', Arial, sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #e0e0e0; border-radius: 12px; overflow: hidden;">
+            <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 24px 20px; text-align: center;">
+              <h2 style="color: #fff; margin: 0; font-size: 20px;">📬 New Portfolio Message</h2>
             </div>
-            <div style="background-color: #fff; padding: 15px; border: 1px solid #eee; border-radius: 5px;">
-              <p><strong>Message:</strong></p>
-              <p style="white-space: pre-wrap; color: #555;">${safeMessage}</p>
+            <div style="padding: 24px 20px;">
+              <div style="background-color: #f0f4ff; padding: 16px; border-radius: 8px; margin-bottom: 20px; border-left: 4px solid #667eea;">
+                <p style="margin: 0 0 8px; font-size: 14px; color: #555;"><strong>👤 From:</strong> ${safeName}</p>
+                <p style="margin: 0; font-size: 14px; color: #555;"><strong>📧 Email:</strong> <a href="mailto:${safeEmail}" style="color: #667eea;">${safeEmail}</a></p>
+              </div>
+              <div style="background-color: #fafafa; padding: 16px; border-radius: 8px; border: 1px solid #eee;">
+                <p style="margin: 0 0 8px; font-size: 14px; color: #333;"><strong>💬 Message:</strong></p>
+                <p style="white-space: pre-wrap; color: #555; margin: 0; font-size: 14px; line-height: 1.6;">${safeMessage}</p>
+              </div>
             </div>
-            <p style="font-size: 12px; color: #888; text-align: center; margin-top: 30px;">Sent from your portfolio website</p>
+            <div style="background-color: #f9f9f9; padding: 12px 20px; text-align: center; border-top: 1px solid #eee;">
+              <p style="font-size: 11px; color: #aaa; margin: 0;">Sent from your portfolio website · Hit reply to respond directly to ${safeName}</p>
+            </div>
           </div>
         `,
       };

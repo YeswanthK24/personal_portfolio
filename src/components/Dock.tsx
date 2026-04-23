@@ -46,7 +46,8 @@ export default function Dock() {
     <motion.div
       onMouseMove={(event) => mouseX.set(event.pageX)}
       onMouseLeave={() => mouseX.set(Infinity)}
-      className="fixed bottom-3 left-1/2 z-50 flex h-14 w-[calc(100%-1rem)] max-w-[34rem] -translate-x-1/2 items-end justify-between gap-2 overflow-x-auto rounded-[1.4rem] border border-white/10 bg-[#07121f]/75 px-2.5 pb-2.5 backdrop-blur-xl sm:bottom-4 sm:h-16 sm:max-w-[52rem] sm:justify-start sm:gap-3 sm:px-4 sm:pb-3"
+      className="fixed bottom-2 left-1/2 z-50 flex h-12 w-[calc(100%-0.75rem)] max-w-[34rem] -translate-x-1/2 items-end justify-between gap-1.5 overflow-x-auto rounded-[1.2rem] border border-white/10 bg-[#07121f]/80 px-2 pb-2 backdrop-blur-xl sm:bottom-4 sm:h-14 sm:w-[calc(100%-1.5rem)] sm:gap-2 sm:rounded-[1.4rem] sm:px-3 sm:pb-2.5 md:h-16 md:max-w-[52rem] md:justify-start md:gap-3 md:px-4 md:pb-3"
+      style={{ paddingBottom: "max(0.5rem, env(safe-area-inset-bottom, 0.5rem))" }}
     >
       {DOCK_ITEMS.map((item) => (
         <DockIcon key={item.id} mouseX={mouseX} item={item} />
@@ -77,7 +78,7 @@ function DockIcon({
       <motion.div
         ref={ref}
         style={{ width }}
-        className="group relative flex aspect-square w-9 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/80 transition-colors hover:bg-white/12 sm:w-10"
+        className="group relative flex aspect-square w-8 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/80 transition-colors hover:bg-white/12 sm:w-9 md:w-10"
       >
         <item.icon className="h-1/2 w-1/2 group-hover:text-white" />
         <span className="pointer-events-none absolute -top-10 left-1/2 hidden -translate-x-1/2 whitespace-nowrap rounded-full border border-white/10 bg-[#050d18] px-2 py-1 text-xs text-white opacity-0 transition-opacity group-hover:opacity-100 md:block">

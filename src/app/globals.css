@@ -3,6 +3,8 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 5rem;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 :root {
@@ -88,7 +90,7 @@ canvas {
 
 .section-shell {
   position: relative;
-  padding: 4rem 1rem;
+  padding: 3rem 0.75rem;
 }
 
 .glass-panel {
@@ -264,10 +266,30 @@ canvas {
   }
 }
 
+@media (min-width: 480px) {
+  .section-shell {
+    padding: 3.5rem 1rem;
+  }
+}
+
 @media (min-width: 768px) {
   .section-shell {
     padding-inline: 2rem;
     padding-block: 5.75rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-shell {
+    padding-inline: 2.5rem;
+  }
+}
+
+/* Safe area insets for notched devices (iPhone X+, etc.) */
+@supports (padding: env(safe-area-inset-bottom)) {
+  .section-shell {
+    padding-left: max(0.75rem, env(safe-area-inset-left));
+    padding-right: max(0.75rem, env(safe-area-inset-right));
   }
 }
 
