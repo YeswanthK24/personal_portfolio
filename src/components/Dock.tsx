@@ -46,7 +46,7 @@ export default function Dock() {
     <motion.div
       onMouseMove={(event) => mouseX.set(event.pageX)}
       onMouseLeave={() => mouseX.set(Infinity)}
-      className="fixed bottom-2 left-1/2 z-50 flex h-12 w-[calc(100%-0.75rem)] max-w-[34rem] -translate-x-1/2 items-end justify-between gap-1.5 overflow-x-auto rounded-[1.2rem] border border-white/10 bg-[#07121f]/80 px-2 pb-2 backdrop-blur-xl sm:bottom-4 sm:h-14 sm:w-[calc(100%-1.5rem)] sm:gap-2 sm:rounded-[1.4rem] sm:px-3 sm:pb-2.5 md:h-16 md:max-w-[52rem] md:justify-start md:gap-3 md:px-4 md:pb-3"
+      className="fixed bottom-2 left-1/2 z-50 flex h-12 w-auto -translate-x-1/2 items-end justify-center gap-1.5 rounded-[1.2rem] border border-white/10 bg-[#07121f]/80 px-2 pb-2 backdrop-blur-xl sm:bottom-4 sm:h-14 sm:gap-2 sm:rounded-[1.4rem] sm:px-3 sm:pb-2.5 md:h-16 md:gap-3 md:px-4 md:pb-3"
       style={{ paddingBottom: "max(0.5rem, env(safe-area-inset-bottom, 0.5rem))" }}
     >
       {DOCK_ITEMS.map((item) => (
