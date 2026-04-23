@@ -46,7 +46,7 @@ export default function Dock() {
     <motion.div
       onMouseMove={(event) => mouseX.set(event.pageX)}
       onMouseLeave={() => mouseX.set(Infinity)}
-      className="fixed bottom-4 left-1/2 z-50 flex h-16 w-[calc(100%-1.5rem)] max-w-[52rem] -translate-x-1/2 items-end gap-3 overflow-x-auto rounded-[1.6rem] border border-white/10 bg-[#07121f]/70 px-4 pb-3 backdrop-blur-xl md:bottom-6 md:w-auto"
+      className="fixed bottom-3 left-1/2 z-50 flex h-14 w-[calc(100%-1rem)] max-w-[34rem] -translate-x-1/2 items-end justify-between gap-2 overflow-x-auto rounded-[1.4rem] border border-white/10 bg-[#07121f]/75 px-2.5 pb-2.5 backdrop-blur-xl sm:bottom-4 sm:h-16 sm:max-w-[52rem] sm:justify-start sm:gap-3 sm:px-4 sm:pb-3"
     >
       {DOCK_ITEMS.map((item) => (
         <DockIcon key={item.id} mouseX={mouseX} item={item} />
@@ -77,10 +77,10 @@ function DockIcon({
       <motion.div
         ref={ref}
         style={{ width }}
-        className="group relative flex aspect-square w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/80 transition-colors hover:bg-white/12"
+        className="group relative flex aspect-square w-9 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/80 transition-colors hover:bg-white/12 sm:w-10"
       >
         <item.icon className="h-1/2 w-1/2 group-hover:text-white" />
-        <span className="pointer-events-none absolute -top-10 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full border border-white/10 bg-[#050d18] px-2 py-1 text-xs text-white opacity-0 transition-opacity group-hover:opacity-100">
+        <span className="pointer-events-none absolute -top-10 left-1/2 hidden -translate-x-1/2 whitespace-nowrap rounded-full border border-white/10 bg-[#050d18] px-2 py-1 text-xs text-white opacity-0 transition-opacity group-hover:opacity-100 md:block">
           {item.label}
         </span>
       </motion.div>

@@ -17,7 +17,7 @@ const syne = Syne({
 export const metadata: Metadata = {
   title: "Yeswanth Krishnamoorthi | Java Full Stack Developer",
   description:
-    "Portfolio of Yeswanth Krishnamoorthi featuring Java full stack development, Mphasis project experience, AI applications, and enterprise workflow systems.",
+    "Portfolio of Yeswanth Krishnamoorthi featuring Java full stack development, React interfaces, Spring-based services, and AI-focused projects.",
 };
 
 export default function RootLayout({

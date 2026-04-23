@@ -71,6 +71,12 @@ a {
   color: inherit;
 }
 
+button,
+input,
+textarea {
+  font: inherit;
+}
+
 canvas {
   touch-action: none;
 }
@@ -82,7 +88,7 @@ canvas {
 
 .section-shell {
   position: relative;
-  padding: 5.5rem 1.25rem;
+  padding: 4rem 1rem;
 }
 
 .glass-panel {
@@ -198,6 +204,55 @@ canvas {
   background: var(--surface-strong);
 }
 
+.button-primary,
+.button-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  border-radius: 999px;
+  padding: 0.95rem 1.45rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1;
+  text-decoration: none;
+  transition:
+    transform 180ms ease,
+    background-color 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    color 180ms ease;
+}
+
+.button-primary {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(120deg, #76e4f7 0%, #c3d9b4 48%, #ff9f5a 100%);
+  color: #07111f !important;
+  box-shadow: 0 18px 42px rgba(10, 21, 37, 0.28);
+}
+
+.button-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 24px 48px rgba(10, 21, 37, 0.34);
+}
+
+.button-secondary {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(246, 241, 232, 0.96) !important;
+}
+
+.button-secondary:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.button-block {
+  width: 100%;
+  border-radius: 1.35rem;
+  padding-block: 1rem;
+}
+
 @keyframes floatY {
   0%,
   100% {
@@ -212,7 +267,7 @@ canvas {
 @media (min-width: 768px) {
   .section-shell {
     padding-inline: 2rem;
-    padding-block: 6.25rem;
+    padding-block: 5.75rem;
   }
 }
 

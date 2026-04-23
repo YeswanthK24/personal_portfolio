@@ -16,7 +16,7 @@ export default function SectionHeader({
   return (
     <div className={`max-w-3xl ${alignClass}`}>
       <p className="section-kicker mb-4">{eyebrow}</p>
-      <h2 className="display-font text-4xl font-semibold tracking-tight text-white md:text-6xl">
+      <h2 className="display-font text-3xl font-semibold tracking-tight text-white sm:text-4xl md:text-5xl">
         {title}
       </h2>
       <p className="muted-copy mt-5 text-base leading-7 md:text-lg">{description}</p>

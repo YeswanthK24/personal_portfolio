@@ -12,11 +12,14 @@ export default function Contact() {
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSuccess, setIsSuccess] = useState(false);
+  const [submitState, setSubmitState] = useState<"idle" | "success" | "error">("idle");
+  const [submitMessage, setSubmitMessage] = useState("");
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
     setIsSubmitting(true);
+    setSubmitState("idle");
+    setSubmitMessage("");
 
     try {
       const response = await fetch("/api/send-email", {
@@ -27,16 +30,21 @@ export default function Contact() {
         body: JSON.stringify(formState),
       });
 
+      const result = (await response.json().catch(() => null)) as
+        | { message?: string; error?: string }
+        | null;
+
       if (!response.ok) {
-        throw new Error("Failed to send message");
+        throw new Error(result?.error ?? "Failed to send message");
       }
 
-      setIsSuccess(true);
+      setSubmitState("success");
+      setSubmitMessage(result?.message ?? "Message sent successfully.");
       setFormState({ name: "", email: "", message: "" });
-      setTimeout(() => setIsSuccess(false), 3000);
     } catch (error) {
       console.error("Error sending message:", error);
-      alert("Failed to send message. Please try again later.");
+      setSubmitState("error");
+      setSubmitMessage("Message could not be sent right now. Please try again in a moment.");
     } finally {
       setIsSubmitting(false);
     }
@@ -50,7 +58,7 @@ export default function Contact() {
       <div className="mx-auto max-w-7xl">
         <SectionHeader eyebrow="Contact" title="Contact." description="A simple way to reach me." />
 
-        <div className="mt-14 grid grid-cols-1 gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+        <div className="mt-12 grid grid-cols-1 gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start lg:gap-10">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -58,7 +66,7 @@ export default function Contact() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="space-y-6"
           >
-            <div className="glass-panel rounded-[2rem] p-8 md:p-9">
+            <div className="glass-panel rounded-[2rem] p-6 md:p-9">
               <p className="section-kicker">Direct Reach</p>
               <div className="mt-6 space-y-4">
                 <ContactLink
@@ -87,7 +95,7 @@ export default function Contact() {
             <a
               href={profile.contacts.resume}
               download
-              className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-[#07111f] transition-transform hover:-translate-y-1"
+              className="button-secondary w-full sm:w-auto"
             >
               <ResumeIcon />
               Download Resume
@@ -99,7 +107,7 @@ export default function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, delay: 0.15, ease: "easeOut" }}
-            className="glass-panel rounded-[2rem] p-8 md:p-10"
+            className="glass-panel rounded-[2rem] p-6 md:p-10"
           >
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
@@ -148,19 +156,29 @@ export default function Contact() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="flex w-full items-center justify-center gap-2 rounded-2xl bg-[linear-gradient(120deg,#76e4f7,#ff9f5a)] py-4 font-semibold text-[#07111f] transition-transform hover:-translate-y-1 disabled:opacity-50"
+                className="button-primary button-block disabled:translate-y-0 disabled:opacity-50"
               >
                 {isSubmitting ? (
                   <>
                     <div className="h-5 w-5 animate-spin rounded-full border-2 border-black/20 border-t-black/70" />
                     Sending...
                   </>
-                ) : isSuccess ? (
+                ) : submitState === "success" ? (
                   "Message Sent!"
                 ) : (
                   "Send Message"
                 )}
               </button>
+
+              {submitMessage ? (
+                <p
+                  className={`text-sm leading-6 ${
+                    submitState === "error" ? "text-rose-200/90" : "text-cyan-100/85"
+                  }`}
+                >
+                  {submitMessage}
+                </p>
+              ) : null}
             </form>
           </motion.div>
         </div>
@@ -192,7 +210,7 @@ function ContactLink({
       <span className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/5">
         {icon}
       </span>
-      <span className="text-sm leading-6">{label}</span>
+      <span className="min-w-0 break-all text-sm leading-6 sm:break-words">{label}</span>
     </a>
   );
 }

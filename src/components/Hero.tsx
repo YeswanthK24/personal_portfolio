@@ -10,7 +10,7 @@ export default function Hero() {
       <div className="section-orb section-orb--cyan -left-20 top-12 h-64 w-64" />
       <div className="section-orb section-orb--orange right-0 top-28 h-72 w-72" />
 
-      <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+      <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center xl:gap-14">
         <motion.div
           initial={{ opacity: 0, y: 28 }}
           animate={{ opacity: 1, y: 0 }}
@@ -20,37 +20,38 @@ export default function Hero() {
           <span className="status-pill">{profile.availability}</span>
           <p className="mt-7 text-sm uppercase tracking-[0.16em] text-white/55">Hello, I&apos;m</p>
 
-          <h1 className="display-font mt-4 max-w-4xl text-5xl font-semibold leading-[0.94] tracking-tight text-white md:text-7xl">
+          <h1 className="display-font mt-4 max-w-4xl text-4xl font-semibold leading-[0.96] tracking-tight text-white sm:text-5xl md:text-7xl">
             {profile.name}
           </h1>
 
-          <p className="mt-4 text-lg font-medium uppercase tracking-[0.18em] text-cyan-100/72 md:text-xl">
+          <p className="mt-4 text-base font-medium uppercase tracking-[0.18em] text-cyan-100/72 sm:text-lg md:text-xl">
             {profile.role}
           </p>
 
-          <p className="muted-copy mt-7 max-w-2xl text-lg leading-8">{profile.intro}</p>
-          <p className="mt-4 max-w-2xl text-base leading-7 text-white/82">{profile.subIntro}</p>
+          <p className="muted-copy mt-6 max-w-2xl text-base leading-7 sm:text-lg sm:leading-8">
+            {profile.intro}
+          </p>
+          <p className="mt-4 max-w-2xl text-sm leading-7 text-white/82 sm:text-base">
+            {profile.subIntro}
+          </p>
 
           <div className="mt-6 flex flex-wrap gap-3 text-sm text-white/70">
             <span className="rounded-full border border-white/10 bg-white/5 px-4 py-2">
               {profile.location}
             </span>
-            <span className="rounded-full border border-white/10 bg-white/5 px-4 py-2">
+            <span className="max-w-full rounded-full border border-white/10 bg-white/5 px-4 py-2 break-all sm:break-normal">
               {profile.contacts.email}
             </span>
           </div>
 
-          <div className="mt-10 flex flex-wrap gap-3">
-            <a
-              href="#projects"
-              className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-[#07111f] transition-transform hover:-translate-y-1"
-            >
+          <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+            <a href="#projects" className="button-primary w-full sm:w-auto">
               View Projects
             </a>
             <a
               href={profile.contacts.resume}
               download
-              className="rounded-full border border-white/12 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition-transform hover:-translate-y-1 hover:bg-white/10"
+              className="button-secondary w-full sm:w-auto"
             >
               Download Resume
             </a>
@@ -58,7 +59,7 @@ export default function Hero() {
               href={profile.contacts.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-full border border-white/12 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition-transform hover:-translate-y-1 hover:bg-white/10"
+              className="button-secondary w-full sm:w-auto"
             >
               GitHub
             </a>
@@ -80,7 +81,7 @@ export default function Hero() {
           initial={{ opacity: 0, x: 24 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.12, ease: "easeOut" }}
-          className="relative"
+          className="relative lg:pl-4"
         >
           <HeroScene />
         </motion.div>

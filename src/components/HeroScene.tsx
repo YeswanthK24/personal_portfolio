@@ -74,7 +74,7 @@ function FloatingTile({
 
 export default function HeroScene() {
   return (
-    <div className="relative h-[28rem] overflow-hidden rounded-[2rem] border border-white/10 bg-[radial-gradient(circle_at_top,rgba(118,228,247,0.18),transparent_30rem),linear-gradient(180deg,rgba(11,20,35,0.96),rgba(7,13,24,0.96))] md:h-[34rem]">
+    <div className="relative h-[20rem] overflow-hidden rounded-[2rem] border border-white/10 bg-[radial-gradient(circle_at_top,rgba(118,228,247,0.18),transparent_30rem),linear-gradient(180deg,rgba(11,20,35,0.96),rgba(7,13,24,0.96))] sm:h-[24rem] md:h-[32rem]">
       <div className="absolute inset-4 rounded-[1.6rem] orbit-border" />
       <Canvas camera={{ position: [0, 0, 7.5], fov: 42 }}>
         <ambientLight intensity={1.15} />
@@ -86,16 +86,16 @@ export default function HeroScene() {
       </Canvas>
 
       <div className="pointer-events-none absolute inset-0">
-        <div className="floating-medium absolute left-5 top-6 rounded-full border border-white/10 bg-[#081424]/80 px-3 py-2 text-xs uppercase tracking-[0.2em] text-white/75 md:left-7 md:top-7">
+        <div className="floating-medium absolute left-4 top-5 rounded-full border border-white/10 bg-[#081424]/80 px-3 py-2 text-[0.65rem] uppercase tracking-[0.18em] text-white/75 sm:left-5 sm:text-xs md:left-7 md:top-7">
           React
         </div>
-        <div className="floating-fast absolute right-5 top-14 rounded-full border border-white/10 bg-[#0b192c]/80 px-3 py-2 text-xs uppercase tracking-[0.2em] text-white/75 md:right-8 md:top-16">
+        <div className="floating-fast absolute right-4 top-12 rounded-full border border-white/10 bg-[#0b192c]/80 px-3 py-2 text-[0.65rem] uppercase tracking-[0.18em] text-white/75 sm:right-5 sm:text-xs md:right-8 md:top-16">
           Node.js
         </div>
-        <div className="floating-slow absolute bottom-12 left-8 rounded-full border border-white/10 bg-[#0e1e30]/80 px-3 py-2 text-xs uppercase tracking-[0.2em] text-white/75">
+        <div className="floating-slow absolute bottom-10 left-5 rounded-full border border-white/10 bg-[#0e1e30]/80 px-3 py-2 text-[0.65rem] uppercase tracking-[0.18em] text-white/75 sm:left-7 sm:text-xs">
           TensorFlow
         </div>
-        <div className="floating-medium absolute bottom-8 right-10 rounded-full border border-white/10 bg-[#111d33]/80 px-3 py-2 text-xs uppercase tracking-[0.2em] text-white/75">
+        <div className="floating-medium absolute bottom-6 right-5 rounded-full border border-white/10 bg-[#111d33]/80 px-3 py-2 text-[0.65rem] uppercase tracking-[0.18em] text-white/75 sm:right-8 sm:text-xs">
           MySQL
         </div>
       </div>
